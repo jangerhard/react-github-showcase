@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const API = 'https://api.github.com/graphql';
-const API_KEY = 'x';
 
 class GithubShowcase extends React.Component {
 
@@ -18,7 +18,7 @@ class GithubShowcase extends React.Component {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "Authorization": "bearer " + API_KEY
+                "Authorization": "bearer " + this.props.api_key
             },
             body: JSON.stringify({ query: query }),
         })
@@ -32,6 +32,13 @@ class GithubShowcase extends React.Component {
     );
     }
 }
+
+GithubShowcase.propTypes = {
+    username: PropTypes.string.isRequired,
+    api_key: PropTypes.string.isRequired,
+};
+
+
 export default GithubShowcase;
 
 export const query = `
