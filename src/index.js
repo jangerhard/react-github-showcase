@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const API = 'https://api.github.com/graphql';
 
@@ -36,39 +36,49 @@ class GithubShowcase extends React.Component {
 
     render() {
         return (
-            <div className={styles.container}>
-                <div className={styles.profileInfo}>
-                    <img className={styles.pic}
-                           src="https://avatars2.githubusercontent.com/u/6482205?v=4">
+            <div className="container" style={{
+                display: "flex"
+            }}>
+                <div className="profileInfo" style={{
+                    display: "flex",
+                    flexDirection: "column"
+                }}>
+                    <img className="pic" style={{
+                        width: "50%",
+                        borderRadius: "50%"
+                    }}
+                         src="https://avatars2.githubusercontent.com/u/6482205?v=4">
 
                     </img>
                     Jan Schøpp
                 </div>
-                <div className={styles.repos}>
-                    <div className={styles.repo}>
+                <div className="repos" style={{
+                        width: "75%"
+                }}>
+                    <div className="repo">
                         Repo 1
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit1
                         </div>
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit2
                         </div>
                     </div>
-                    <div className={styles.repo}>
+                    <div className="repo">
                         Repo 2
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit1
                         </div>
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit2
                         </div>
                     </div>
-                    <div className={styles.repo}>
+                    <div className="repo">
                         Repo 3
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit1
                         </div>
-                        <div className={styles.commit}>
+                        <div className="commit">
                             Commit2
                         </div>
                     </div>
