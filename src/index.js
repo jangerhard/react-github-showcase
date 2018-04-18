@@ -14,7 +14,10 @@ class GithubShowcase extends React.Component {
 
         this.state = {
             data: [],
-            variables: variables
+            variables: variables,
+            fullName: String,
+            avatarUrl: String,
+            repos: []
         };
     }
 
@@ -31,7 +34,13 @@ class GithubShowcase extends React.Component {
             }),
         })
             .then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => {
+                this.setState({
+                    fullName: res.data.user.name,
+                    avatarUrl: res.data.user.avatarUrl,
+                    repos: res.data.user.repositories.edges
+                });
+            });
     }
 
     render() {
@@ -47,40 +56,27 @@ class GithubShowcase extends React.Component {
                         width: "50%",
                         borderRadius: "50%"
                     }}
-                         src="https://avatars2.githubusercontent.com/u/6482205?v=4">
+                         src={this.state.avatarUrl}>
 
                     </img>
-                    Jan Schøpp
+                    {this.state.fullName}
                 </div>
                 <div className="repos" style={{
-                        width: "75%"
+                    width: "75%"
                 }}>
                     <div className="repo">
-                        Repo 1
-                        <div className="commit">
-                            Commit1
-                        </div>
-                        <div className="commit">
-                            Commit2
-                        </div>
-                    </div>
-                    <div className="repo">
-                        Repo 2
-                        <div className="commit">
-                            Commit1
-                        </div>
-                        <div className="commit">
-                            Commit2
-                        </div>
-                    </div>
-                    <div className="repo">
-                        Repo 3
-                        <div className="commit">
-                            Commit1
-                        </div>
-                        <div className="commit">
-                            Commit2
-                        </div>
+                        {this.state.repos.map(function (repo) {
+                            return <div>
+                                {repo.node.name}
+                                {repo.node.ref.target.history.nodes.map(function (commit) {
+                                    return <div style={{
+                                        paddingLeft: "3em"
+                                    }}>
+                                        {commit.abbreviatedOid} : {commit.message} ({commit.committedDate})
+                                    </div>;
+                                })}
+                            </div>;
+                        })}
                     </div>
                 </div>
             </div>
@@ -129,7 +125,8 @@ export const query = `
                     }
 
                     message
-
+                    abbreviatedOid
+                    committedDate
                   }
 
                 }
