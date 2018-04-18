@@ -36,8 +36,45 @@ class GithubShowcase extends React.Component {
 
     render() {
         return (
-            <div>{}</div>
-    );
+            <div className={styles.container}>
+                <div className={styles.profileInfo}>
+                    <img className={styles.pic}
+                           src="https://avatars2.githubusercontent.com/u/6482205?v=4">
+
+                    </img>
+                    Jan Schøpp
+                </div>
+                <div className={styles.repos}>
+                    <div className={styles.repo}>
+                        Repo 1
+                        <div className={styles.commit}>
+                            Commit1
+                        </div>
+                        <div className={styles.commit}>
+                            Commit2
+                        </div>
+                    </div>
+                    <div className={styles.repo}>
+                        Repo 2
+                        <div className={styles.commit}>
+                            Commit1
+                        </div>
+                        <div className={styles.commit}>
+                            Commit2
+                        </div>
+                    </div>
+                    <div className={styles.repo}>
+                        Repo 3
+                        <div className={styles.commit}>
+                            Commit1
+                        </div>
+                        <div className={styles.commit}>
+                            Commit2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
     }
 }
 
@@ -53,7 +90,8 @@ export const query = `
   query GithubQuery($username: String!) {
 
   user(login: $username) {
-
+    avatarUrl
+    name
     repositories(first: 3, orderBy: {field: UPDATED_AT, direction: DESC}) {
 
       edges {
