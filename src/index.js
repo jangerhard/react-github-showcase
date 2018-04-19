@@ -49,13 +49,25 @@ class GithubShowcase extends React.Component {
     render() {
         return (
             <div className="container" style={{
-                display: "flex"
+                display: "flex",
+                flexDirection: "column"
             }}>
-                <ProfileInfoComponent
-                    fullName={this.state.fullName.toString()}
-                    avatarUrl={this.state.avatarUrl.toString()}/>
-                
-                <RepositoriesComponent repos={this.state.repos}/>
+                <h3>
+                    Latest Github Activity
+                </h3>
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row"
+                }}>
+                    {this.props.showProfileInfo &&
+                    <ProfileInfoComponent
+                        fullName={this.state.fullName.toString()}
+                        avatarUrl={this.state.avatarUrl.toString()}/>
+                    }
+
+                    <RepositoriesComponent repos={this.state.repos}/>
+
+                </div>
             </div>
         );
     }
@@ -64,8 +76,12 @@ class GithubShowcase extends React.Component {
 GithubShowcase.propTypes = {
     username: PropTypes.string.isRequired,
     api_key: PropTypes.string.isRequired,
+    showProfileInfo: PropTypes.boolean
 };
 
+GithubShowcase.defaultProps = {
+  showProfileInfo: true
+};
 
 export default GithubShowcase;
 
