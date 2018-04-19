@@ -6,10 +6,12 @@ class ProfileInfoComponent extends React.Component {
         return (
             <div className="profileInfo" style={{
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                width: "10em",
+                marginRight: "1.5em",
+                textAlign: "center"
             }}>
                 <img className="pic" style={{
-                    width: "50%",
                     borderRadius: "50%"
                 }}
                      src={this.props.avatarUrl}>
