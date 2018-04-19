@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProfileInfoComponent from "./Components/ProfileInfoComponent";
+import RepositoryComponent from "./Components/RepositoryComponent";
+import RepositoriesComponent from "./Components/RepositoriesComponent";
 
 const API = 'https://api.github.com/graphql';
 
@@ -48,37 +51,11 @@ class GithubShowcase extends React.Component {
             <div className="container" style={{
                 display: "flex"
             }}>
-                <div className="profileInfo" style={{
-                    display: "flex",
-                    flexDirection: "column"
-                }}>
-                    <img className="pic" style={{
-                        width: "50%",
-                        borderRadius: "50%"
-                    }}
-                         src={this.state.avatarUrl}>
-
-                    </img>
-                    {this.state.fullName}
-                </div>
-                <div className="repos" style={{
-                    width: "75%"
-                }}>
-                    <div className="repo">
-                        {this.state.repos.map(function (repo) {
-                            return <div>
-                                {repo.node.name}
-                                {repo.node.ref.target.history.nodes.map(function (commit) {
-                                    return <div style={{
-                                        paddingLeft: "3em"
-                                    }}>
-                                        {commit.abbreviatedOid} : {commit.message} ({commit.committedDate})
-                                    </div>;
-                                })}
-                            </div>;
-                        })}
-                    </div>
-                </div>
+                <ProfileInfoComponent
+                    fullName={this.state.fullName.toString()}
+                    avatarUrl={this.state.avatarUrl.toString()}/>
+                
+                <RepositoriesComponent repos={this.state.repos}/>
             </div>
         );
     }
