@@ -98,7 +98,7 @@ export const query = `
         node {
 
           name
-
+          url
           ref(qualifiedName: "master"){
 
             target {

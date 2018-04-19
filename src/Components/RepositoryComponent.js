@@ -8,7 +8,9 @@ class RepositoryComponent extends React.Component {
 
         return(
             <div>
-                {this.props.name}
+                <a href={this.props.url}>
+                    {this.props.name}
+                </a>
                 {this.props.commits.map(function (commit) {
                     return <CommitComponent
                         abbreviatedOid={commit.abbreviatedOid}
@@ -22,7 +24,8 @@ class RepositoryComponent extends React.Component {
 
 RepositoryComponent.propTypes = {
     name: PropTypes.string.isRequired,
-    commits: PropTypes.array.isRequired
+    commits: PropTypes.array.isRequired,
+    url: PropTypes.array.isRequired
 };
 
 export default RepositoryComponent;

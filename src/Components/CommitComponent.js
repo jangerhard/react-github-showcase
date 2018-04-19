@@ -7,9 +7,9 @@ class CommitComponent extends React.Component {
 
         return(
             <div style={{
-                paddingLeft: "3em"
+                paddingLeft: "1em"
             }}>
-                {this.props.abbreviatedOid} : {this.props.message} ({this.props.committedDate})
+                {this.props.abbreviatedOid}: {this.props.message} ({this.props.committedDate})
             </div>
         )
     }
