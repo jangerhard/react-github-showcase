@@ -18,5 +18,5 @@ showProfileInfo: Display basic profile info from Github - Boolean (Default: true
 
 ## Change-log
 
-### 0.0.4
+### 0.0.5
 Add ability to hide basic profile info

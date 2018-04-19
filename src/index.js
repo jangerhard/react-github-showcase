@@ -61,8 +61,8 @@ class GithubShowcase extends React.Component {
                 }}>
                     {this.props.showProfileInfo &&
                     <ProfileInfoComponent
-                        fullName={this.state.fullName.toString()}
-                        avatarUrl={this.state.avatarUrl.toString()}/>
+                        fullName={this.state.fullName}
+                        avatarUrl={this.state.avatarUrl}/>
                     }
 
                     <RepositoriesComponent repos={this.state.repos}/>
@@ -74,8 +74,8 @@ class GithubShowcase extends React.Component {
 }
 
 GithubShowcase.propTypes = {
-    username: PropTypes.string.isRequired,
-    api_key: PropTypes.string.isRequired,
+    username: PropTypes.function.isRequired,
+    api_key: PropTypes.function.isRequired,
     showProfileInfo: PropTypes.boolean
 };
 
