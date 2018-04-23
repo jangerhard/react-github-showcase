@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import ProfileInfoComponent from "./Components/ProfileInfoComponent";
-import RepositoryComponent from "./Components/RepositoryComponent";
 import RepositoriesComponent from "./Components/RepositoriesComponent";
 
 const API = 'https://api.github.com/graphql';
@@ -12,7 +11,9 @@ class GithubShowcase extends React.Component {
         super(props);
 
         const variables = {
-            "username": this.props.username
+            "username": this.props.username,
+            "numRepositories": this.props.numRepositories,
+            "numCommits": this.props.numCommits,
         };
 
         this.state = {
@@ -62,10 +63,10 @@ class GithubShowcase extends React.Component {
                     {this.props.showProfileInfo &&
                     <ProfileInfoComponent
                         fullName={this.state.fullName}
-                        avatarUrl={this.state.avatarUrl}/>
+                        avatarUrl={this.state.avatarUrl} />
                     }
 
-                    <RepositoriesComponent repos={this.state.repos}/>
+                    <RepositoriesComponent repos={this.state.repos} />
 
                 </div>
             </div>
@@ -76,11 +77,15 @@ class GithubShowcase extends React.Component {
 GithubShowcase.propTypes = {
     username: PropTypes.function.isRequired,
     api_key: PropTypes.function.isRequired,
-    showProfileInfo: PropTypes.boolean
+    showProfileInfo: PropTypes.boolean,
+    numRepositories: PropTypes.number,
+    numCommits: PropTypes.number,
 };
 
 GithubShowcase.defaultProps = {
-  showProfileInfo: true
+    showProfileInfo: true,
+    numRepositories: 3,
+    numCommits: 2,
 };
 
 export default GithubShowcase;
@@ -91,7 +96,7 @@ export const query = `
   user(login: $username) {
     avatarUrl
     name
-    repositories(first: 3, orderBy: {field: UPDATED_AT, direction: DESC}) {
+    repositories(first: $numRepositories, orderBy: {field: UPDATED_AT, direction: DESC}) {
 
       edges {
 
@@ -105,7 +110,7 @@ export const query = `
 
               ... on Commit {
 
-                history (first: 2) {
+                history (first: numCommits) {
 
                   nodes{
 
