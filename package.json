@@ -1,6 +1,6 @@
 {
   "name": "react-github-showcase",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Use GraphQL to showcase the latest worked-on projects of a given user.",
   "tags": "react,github,showcase,git",
   "main": "build/index.js",
