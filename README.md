@@ -1,4 +1,4 @@
-# React-Github-Showcase
+# React Github Showcase
 
 A small react component showcasing the latest contributions to your Github profile.
 
