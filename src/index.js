@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProfileInfoComponent from "./Components/ProfileInfoComponent";
+import RepositoryComponent from "./Components/RepositoryComponent";
 import RepositoriesComponent from "./Components/RepositoriesComponent";
 
 const API = 'https://api.github.com/graphql';
@@ -79,13 +80,13 @@ GithubShowcase.propTypes = {
     api_key: PropTypes.function.isRequired,
     showProfileInfo: PropTypes.boolean,
     numRepositories: PropTypes.number,
-    numCommits: PropTypes.number,
+    numCommits: PropTypes.number
 };
 
 GithubShowcase.defaultProps = {
     showProfileInfo: true,
     numRepositories: 3,
-    numCommits: 2,
+    numCommits: 2
 };
 
 export default GithubShowcase;
