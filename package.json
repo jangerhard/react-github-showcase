@@ -2,7 +2,10 @@
   "name": "react-github-showcase",
   "version": "0.0.7",
   "description": "Use GraphQL to showcase the latest worked-on projects of a given user.",
-  "tags": "react,github,showcase,git",
+  "keywords": [
+    "react",
+    "github"
+  ],
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^15.5.4"
