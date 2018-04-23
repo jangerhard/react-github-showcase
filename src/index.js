@@ -91,57 +91,35 @@ GithubShowcase.defaultProps = {
 export default GithubShowcase;
 
 export const query = `
-  query GithubQuery($username: String!) {
-
+  query GithubQuery($username: String!, $numRepositories: Int!, $numCommits: Int!) {
   user(login: $username) {
     avatarUrl
     name
     repositories(first: $numRepositories, orderBy: {field: UPDATED_AT, direction: DESC}) {
-
       edges {
-
         node {
-
           name
           url
-          ref(qualifiedName: "master"){
-
+          ref(qualifiedName: "master") {
             target {
-
               ... on Commit {
-
-                history (first: numCommits) {
-
-                  nodes{
-
+                history(first: $numCommits) {
+                  nodes {
                     author {
-
                       name
-
                       avatarUrl
-
                     }
-
                     message
                     abbreviatedOid
                     committedDate
                   }
-
                 }
-
               }
-
             }
-
           }
-
         }
-
       }
-
     }
-
   }
-
 }
 `;
