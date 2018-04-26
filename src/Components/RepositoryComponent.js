@@ -25,7 +25,7 @@ class RepositoryComponent extends React.Component {
 RepositoryComponent.propTypes = {
     name: PropTypes.string.isRequired,
     commits: PropTypes.array.isRequired,
-    url: PropTypes.array.isRequired
+    url: PropTypes.string.isRequired
 };
 
 export default RepositoryComponent;

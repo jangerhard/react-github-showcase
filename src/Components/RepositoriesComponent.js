@@ -6,16 +6,13 @@ import RepositoryComponent from "./RepositoryComponent";
 class RepositoriesComponent extends React.Component {
     render() {
         return (
-            <div className="repos" style={{
-            }}>
-                <div className="repo">
-                    {this.props.repos.map(function (repo) {
-                        return <RepositoryComponent
-                            name={repo.node.name}
-                            commits={repo.node.ref.target.history.nodes}
-                            url={repo.node.url}/>;
-                    })}
-                </div>
+            <div className="repos" style={{}}>
+                {this.props.repos.map(function (repo) {
+                    return <RepositoryComponent
+                        name={repo.node.name}
+                        commits={repo.node.ref.target.history.nodes}
+                        url={repo.node.url}/>;
+                })}
             </div>
         )
     }
