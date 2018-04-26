@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jangerhard/react-github-showcase.svg?style=svg)](https://circleci.com/gh/jangerhard/react-github-showcase)
+
 # React Github Showcase
 
 A small react component showcasing the latest contributions to your Github profile.
