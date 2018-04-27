@@ -24,6 +24,9 @@ numCommits: How many repositories should be displayed - Number (Default: 2)
 
 ## Change-log
 
+### 0.0.11
+Proper formatting of dates
+
 ### 0.0.6
 Add ability to specify number of repositories and commits to showcase
 
