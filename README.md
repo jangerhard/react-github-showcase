@@ -8,7 +8,7 @@ Uses headers to keep style consistent with your theme.
 
 Still under development, but usable!
 
-![Image of component wrapped in styled div](https://lh3.googleusercontent.com/CXqKYftHCoQfDvxtUXJ0Kbiae8D2ADfZKn1Yx3imYYfLkoH3wgLrnFdhjVGPXco5IK8ao-Uvzjg30kILaryXpv8_r-Pdy6hIIfpNq-AxYryLhz_jYb5fzRPaQ5z5eMqlTM7vyieOMKavpmBrJa3TCEBXXqgmP9u8ckUIv-126mQ8N3tJEIpktCs_ljk4-46hXRoGVL7UbO6q5dfkoxIFILWGnSMGOln9azFwxnhoyTbxnOMRmIGTRQyUtO7nFBgDqgltC5XvZQlwt-7tAErIqa1s-6clEd4Ga01sKJvcAPHxm7ctSlU3KhFDR9ofDjEY7VwSc-oPS-gSAClzJdeerUWLIunfgMoQWgUgQqy_S2xQQw043SPvUo_FLwCmBvFW_QPaqXCSdpQkK-vlrIuvpuPzlupKuz-nVps6c1DinNgY0Q3pVBbN20eu6v9NZjVgZzW7YuZyi82JvqQzD_-HY7azDgw_kUtccoTHvGQuCJNMhonZcsPjAA62frL6li0tQb2d4P2ZBlMx4WiDusJ2A6jcVxDbIiykxHmyxYtaQArfhz6ELiGtHlS3HDg2nWRUvWPD5FJ8OHgSTeAtydK2RvB_IA6A3cqrqp84FmC9=w814-h350-no)
+![Image of component wrapped in styled div](./react-github-showcase.png)
 
 ## Installation
 ```
