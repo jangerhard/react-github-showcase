@@ -8,7 +8,7 @@ Uses headers to keep style consistent with your theme.
 
 Still under development, but usable!
 
-![Image of component wrapped in styled div](./react-github-showcase.png)
+![Image of component wrapped in styled div](./react-github-showcase.png?raw=true)
 
 ## Installation
 ```
