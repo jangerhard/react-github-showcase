@@ -2,6 +2,15 @@
   "name": "react-github-showcase",
   "version": "0.0.12",
   "description": "Use GraphQL to showcase the latest worked-on projects of a given user.",
+  "homepage": "https://github.com/jangerhard/react-github-showcase#readme",
+  "bugs": {
+    "url": "https://github.com/jangerhard/react-github-showcase/issues",
+    "email": "jgschoepp@gmail.com"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/jangerhard/react-github-showcase.git"
+  },
   "keywords": [
     "react",
     "github"
