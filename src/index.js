@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ProfileInfoComponent from "./Components/ProfileInfoComponent";
 import RepositoryComponent from "./Components/RepositoryComponent";
 import RepositoriesComponent from "./Components/RepositoriesComponent";
+import {getStatsFor} from "./services/getStatsService"
 
 const API = 'https://api.github.com/graphql';
 
@@ -27,6 +28,13 @@ class GithubShowcase extends React.Component {
     }
 
     componentDidMount() {
+        getStatsFor(this.props.api_key, this.state.variables, (user) => {
+            this.setState({
+                fullName: user.name,
+                avatarUrl: user.avatarUrl,
+                repos: user.repositories.edges
+            });
+        }).bind(this);
         fetch(API, {
             method: 'POST',
             headers: {
