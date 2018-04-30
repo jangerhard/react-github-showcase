@@ -1,7 +1,16 @@
 {
   "name": "react-github-showcase",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "Use GraphQL to showcase the latest worked-on projects of a given user.",
+  "homepage": "https://github.com/jangerhard/react-github-showcase#readme",
+  "bugs": {
+    "url": "https://github.com/jangerhard/react-github-showcase/issues",
+    "email": "jgschoepp@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jangerhard/react-github-showcase.git"
+  },
   "keywords": [
     "react",
     "github"
@@ -11,8 +20,10 @@
     "react": "^15.5.4"
   },
   "dependencies": {
+    "moment": "^2.22.1",
     "react": "^15.5.4",
-    "webpack": "^2.6.1"
+    "webpack": "^2.6.1",
+    "prop-types": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

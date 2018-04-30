@@ -24,8 +24,8 @@ class ProfileInfoComponent extends React.Component {
 }
 
 ProfileInfoComponent.propTypes = {
-    fullName: PropTypes.string.isRequired,
-    avatarUrl: PropTypes.string.isRequired
+    fullName: PropTypes.func.isRequired,
+    avatarUrl: PropTypes.func.isRequired
 };
 
 export default ProfileInfoComponent;

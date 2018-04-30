@@ -76,9 +76,9 @@ class GithubShowcase extends React.Component {
 }
 
 GithubShowcase.propTypes = {
-    username: PropTypes.function.isRequired,
-    api_key: PropTypes.function.isRequired,
-    showProfileInfo: PropTypes.boolean,
+    username: PropTypes.string.isRequired,
+    api_key: PropTypes.string.isRequired,
+    showProfileInfo: PropTypes.bool,
     numRepositories: PropTypes.number,
     numCommits: PropTypes.number
 };
