@@ -1,38 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-class CommitComponent extends React.Component {
+const CommitComponent = ({committedDate, abbreviatedOid, message}) => {
 
-    render() {
+    const date = moment(committedDate).fromNow();
 
-        const date = moment(this.props.committedDate).fromNow();
-
-        return(
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "left",
-                paddingLeft: "1em"
-            }}>
-                <div style={{
-                    paddingLeft: "1em"
-                }}>{this.props.abbreviatedOid}</div>
-                :
-                <div style={{
-                    paddingLeft: "0.5em"
-                }}>
-                    {this.props.message}
-                    </div>
-                <div style={{
-                    
-                    paddingLeft: "0.5em"
-                }}> </div>
-                 ({date})
-            </div>
-        )
-    }
-}
+    return (
+        <div style={{paddingLeft: "1em"}}>
+            {abbreviatedOid}: {message} ({date})
+        </div>
+    )
+};
 
 CommitComponent.propTypes = {
     abbreviatedOid: PropTypes.string.isRequired,
