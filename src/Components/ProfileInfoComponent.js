@@ -21,8 +21,8 @@ const ProfileInfoComponent = ({ avatarUrl, fullName }) => (
 );
 
 ProfileInfoComponent.propTypes = {
-    fullName: PropTypes.func.isRequired,
-    avatarUrl: PropTypes.func.isRequired
+    fullName: PropTypes.string.isRequired,
+    avatarUrl: PropTypes.string.isRequired
 };
 
 export default ProfileInfoComponent;

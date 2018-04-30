@@ -15,10 +15,6 @@ export const query = `
               ... on Commit {
                 history(first: $numCommits) {
                   nodes {
-                    author {
-                      name
-                      avatarUrl
-                    }
                     message
                     abbreviatedOid
                     committedDate
