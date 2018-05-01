@@ -6,7 +6,7 @@ A small react component showcasing the latest contributions to your Github profi
 
 Uses headers to keep style consistent with your theme.
 
-Still under development, but usable!
+Still under development, but usable! Can as of May 1st, 2018 be seen in action at [janschoepp-dev](https://janschoepp-dev.netlify.com/projects/).
 
 ![Image of component wrapped in styled div](https://raw.githubusercontent.com/jangerhard/react-github-showcase/master/react-github-showcase.PNG)
 
