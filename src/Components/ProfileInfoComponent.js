@@ -1,31 +1,28 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-class ProfileInfoComponent extends React.Component {
-    render() {
-        return (
-            <div className="profileInfo" style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "10em",
-                marginRight: "1.5em",
-                textAlign: "center"
-            }}>
-                <img className="pic" style={{
-                    borderRadius: "50%"
-                }}
-                     src={this.props.avatarUrl}>
+const styles = {
+    display: "flex",
+    flexDirection: "column",
+    width: "10em",
+    marginRight: "1.5em",
+    textAlign: "center"
+};
 
-                </img>
-                {this.props.fullName}
-            </div>
-        )
-    }
-}
+const imageStyles = {
+    borderRadius: "50%"
+};
+const ProfileInfoComponent = ({ avatarUrl, fullName }) => (
+    <div className="profileInfo" style={styles}>
+        <img className="pic" style={imageStyles} src={avatarUrl} />
+
+        {fullName}
+    </div>
+);
 
 ProfileInfoComponent.propTypes = {
-    fullName: PropTypes.func.isRequired,
-    avatarUrl: PropTypes.func.isRequired
+    fullName: PropTypes.string.isRequired,
+    avatarUrl: PropTypes.string.isRequired
 };
 
 export default ProfileInfoComponent;
