@@ -40,7 +40,7 @@ class GithubShowcase extends React.Component {
                 avatarUrl: user.avatarUrl,
                 repos: user.repositories.edges
             });
-        }).bind(this);
+        })
     }
 
     render() {
