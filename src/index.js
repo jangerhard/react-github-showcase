@@ -1,9 +1,18 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import ProfileInfoComponent from "./Components/ProfileInfoComponent";
-import RepositoryComponent from "./Components/RepositoryComponent";
 import RepositoriesComponent from "./Components/RepositoriesComponent";
-import {getStatsFor} from "./Services/GetStatsService"
+import { getStatsFor } from "./Services/GetStatsService"
+
+const containerStyle = {
+    display: "flex",
+    flexDirection: "column"
+};
+
+const mainStyle = {
+    display: "flex",
+    flexDirection: "row"
+};
 
 class GithubShowcase extends React.Component {
 
@@ -35,25 +44,20 @@ class GithubShowcase extends React.Component {
     }
 
     render() {
+
         return (
-            <div className="container" style={{
-                display: "flex",
-                flexDirection: "column"
-            }}>
-                <h3>
-                    Latest Github Activity
-                </h3>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row"
-                }}>
+            <div style={containerStyle}>
+                <h3> Latest Github Activity </h3>
+
+                <div style={mainStyle}>
+
                     {this.props.showProfileInfo &&
                     <ProfileInfoComponent
                         fullName={this.state.fullName}
-                        avatarUrl={this.state.avatarUrl}/>
+                        avatarUrl={this.state.avatarUrl} />
                     }
 
-                    <RepositoriesComponent repos={this.state.repos}/>
+                    <RepositoriesComponent repos={this.state.repos} />
 
                 </div>
             </div>
