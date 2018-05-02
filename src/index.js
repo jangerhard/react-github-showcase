@@ -10,15 +10,7 @@ class GithubShowcase extends React.Component {
     constructor(props) {
         super(props);
 
-        const variables = {
-            "username": this.props.username,
-            "numRepositories": this.props.numRepositories,
-            "numCommits": this.props.numCommits,
-        };
-
         this.state = {
-            data: [],
-            variables: variables,
             fullName: String,
             avatarUrl: String,
             repos: []
@@ -26,7 +18,14 @@ class GithubShowcase extends React.Component {
     }
 
     componentDidMount() {
-        getStatsFor(this.props.api_key, this.state.variables, (user) => {
+
+        const variables = {
+            "username": this.props.username,
+            "numRepositories": this.props.numRepositories,
+            "numCommits": this.props.numCommits,
+        };
+
+        getStatsFor(this.props.api_key, variables, (user) => {
             this.setState({
                 fullName: user.name,
                 avatarUrl: user.avatarUrl,
