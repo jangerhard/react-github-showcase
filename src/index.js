@@ -1,24 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import ProfileInfoComponent from "./Components/ProfileInfoComponent";
-import RepositoryComponent from "./Components/RepositoryComponent";
 import RepositoriesComponent from "./Components/RepositoriesComponent";
-import {getStatsFor} from "./Services/GetStatsService"
+import { getStatsFor } from "./Services/GetStatsService"
+
+const containerStyle = {
+    display: "flex",
+    flexDirection: "column"
+};
+
+const mainStyle = {
+    display: "flex",
+    flexDirection: "row"
+};
 
 class GithubShowcase extends React.Component {
 
     constructor(props) {
         super(props);
 
-        const variables = {
-            "username": this.props.username,
-            "numRepositories": this.props.numRepositories,
-            "numCommits": this.props.numCommits,
-        };
-
         this.state = {
-            data: [],
-            variables: variables,
             fullName: String,
             avatarUrl: String,
             repos: []
@@ -26,35 +27,37 @@ class GithubShowcase extends React.Component {
     }
 
     componentDidMount() {
-        getStatsFor(this.props.api_key, this.state.variables, (user) => {
+
+        const variables = {
+            "username": this.props.username,
+            "numRepositories": this.props.numRepositories,
+            "numCommits": this.props.numCommits,
+        };
+
+        getStatsFor(this.props.api_key, variables, (user) => {
             this.setState({
                 fullName: user.name,
                 avatarUrl: user.avatarUrl,
                 repos: user.repositories.edges
             });
-        }).bind(this);
+        })
     }
 
     render() {
+
         return (
-            <div className="container" style={{
-                display: "flex",
-                flexDirection: "column"
-            }}>
-                <h3>
-                    Latest Github Activity
-                </h3>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row"
-                }}>
+            <div style={containerStyle}>
+                <h3> Latest Github Activity </h3>
+
+                <div style={mainStyle}>
+
                     {this.props.showProfileInfo &&
                     <ProfileInfoComponent
                         fullName={this.state.fullName}
-                        avatarUrl={this.state.avatarUrl}/>
+                        avatarUrl={this.state.avatarUrl} />
                     }
 
-                    <RepositoriesComponent repos={this.state.repos}/>
+                    <RepositoriesComponent repos={this.state.repos} />
 
                 </div>
             </div>

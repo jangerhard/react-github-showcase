@@ -20,6 +20,8 @@ npm install react-github-showcase
 Add this component to your project and style the wrapping Div however you want! Provide the component with a username to look up and your own API-key from Github so that the component can use GraphQL to query for information.
 
 ```
+import GithubShowcase from 'react-github-showcase';
+
 <div>
     <GithubShowcase
         username={"jangerhard"}
