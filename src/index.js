@@ -47,7 +47,7 @@ class GithubShowcase extends React.Component {
 
         return (
             <div style={containerStyle}>
-                <h3>Latest Github Activity </h3>
+                <h3> Latest Github Activity </h3>
 
                 <div style={mainStyle}>
 

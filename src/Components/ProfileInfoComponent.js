@@ -10,9 +10,7 @@ const styles = {
 };
 
 const imageStyles = {
-    borderRadius: "50%",
-    height: "100%",
-    width: "100%"
+    borderRadius: "50%"
 };
 const ProfileInfoComponent = ({ avatarUrl, fullName }) => (
     <div className="profileInfo" style={styles}>
