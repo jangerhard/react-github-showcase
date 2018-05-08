@@ -21,12 +21,13 @@
   },
   "dependencies": {
     "moment": "^2.22.1",
+    "prop-types": "latest",
     "react": "^15.5.4",
-    "webpack": "^2.6.1",
-    "prop-types": "latest"
+    "react-test-renderer": "^15.6.2",
+    "webpack": "^2.6.1"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --maxWorkers=4 --coverage",
     "start": "webpack --watch",
     "build": "webpack"
   },
