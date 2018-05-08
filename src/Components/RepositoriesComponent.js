@@ -6,6 +6,7 @@ const RepositoriesComponent = ({ repos }) => (
     <div className="repos" style={{}}>
         {repos.map(function (repo) {
             return <RepositoryComponent
+                key={repo.node.url}
                 name={repo.node.name}
                 commits={repo.node.ref.target.history.nodes}
                 url={repo.node.url} />;
