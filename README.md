@@ -8,6 +8,7 @@ Uses headers to keep style consistent with your theme.
 
 Still under development, but usable! Can as of May 1st, 2018 be seen in action at [janschoepp-dev](https://janschoepp-dev.netlify.com/projects/).
 
+### Example with a wrapper-div providing styling
 ![Image of component wrapped in styled div](https://raw.githubusercontent.com/jangerhard/react-github-showcase/master/react-github-showcase.PNG)
 
 ## Installation
