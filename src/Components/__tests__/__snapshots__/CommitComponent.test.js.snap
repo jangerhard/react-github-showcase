@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders commit correctly 1`] = `
+<div
+  style={
+    Object {
+      "paddingLeft": "1em",
+    }
+  }
+>
+  AAAAAA
+  : 
+  This is a commit message
+   (
+  3 days ago
+  )
+</div>
+`;

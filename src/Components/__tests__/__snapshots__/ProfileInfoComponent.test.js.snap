@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders profile-info correctly 1`] = `
+<div
+  className="profileInfo"
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "marginRight": "1.5em",
+      "textAlign": "center",
+      "width": "10em",
+    }
+  }
+>
+  <img
+    className="pic"
+    src="www.avatarurl.com"
+    style={
+      Object {
+        "borderRadius": "50%",
+      }
+    }
+  />
+  Test Testington
+</div>
+`;
