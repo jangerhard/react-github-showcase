@@ -7,6 +7,7 @@ const RepositoryComponent = ({ name, commits, url }) => (
         <a href={url}> {name} </a>
         {commits.map(function (commit) {
             return <CommitComponent
+                key={commit.abbreviatedOid}
                 abbreviatedOid={commit.abbreviatedOid}
                 message={commit.message}
                 committedDate={commit.committedDate} />;
