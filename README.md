@@ -8,7 +8,7 @@ Uses headers to keep style consistent with your theme.
 
 Still under development, but usable! Can as of May 1st, 2018 be seen in action at [janschoepp-dev](https://janschoepp-dev.netlify.com/projects/).
 
-### Example with a [wrapper-div](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.js) providing [styling](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.module.css)
+### Example with a [wrapper-div](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.js) providing [styling](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.module.css) - See [more](https://github-showcase-demos.netlify.com)
 ![Image of component wrapped in styled div](https://raw.githubusercontent.com/jangerhard/react-github-showcase/master/react-github-showcase.PNG)
 
 ## Installation
@@ -42,6 +42,9 @@ showProfileInfo: Display basic profile info from Github - Boolean (Default: true
 numRepositories: How many repositories should be displayed - Number (Default: 3)
 
 numCommits: How many repositories should be displayed - Number (Default: 2)
+
+### Styling 
+Wrap the component in a styled div to change the look and feel of the component, while still keeping it consistant with your own theme. See examples [here](https://github-showcase-demos.netlify.com)
 
 ## Change-log
 
