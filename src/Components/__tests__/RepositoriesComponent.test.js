@@ -73,11 +73,39 @@ const repos = [
     }
 ];
 
-test('renders repository correctly', () => {
+const reposWithNoCommits = [
+    {
+        "node": {
+            "name": "react-github-showcase",
+            "url": "https://github.com/jangerhard/react-github-showcase",
+            "ref": null
+        }
+    },
+    {
+        "node": {
+            "name": "PersonalGatsbyWebsite",
+            "url": "https://github.com/jangerhard/PersonalGatsbyWebsite",
+            "ref": null
+        }
+    }
+];
+
+test('renders repositories correctly', () => {
     const renderer = new ShallowRenderer();
     renderer.render(
         <RepositoriesComponent
             repos={repos}
+        />
+    );
+    const tree = renderer.getRenderOutput();
+    expect(tree).toMatchSnapshot();
+});
+
+test('renders repositories with no commits ', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(
+        <RepositoriesComponent
+            repos={reposWithNoCommits}
         />
     );
     const tree = renderer.getRenderOutput();

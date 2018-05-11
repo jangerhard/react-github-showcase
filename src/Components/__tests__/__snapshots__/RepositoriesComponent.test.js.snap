@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders repository correctly 1`] = `
+exports[`renders repositories correctly 1`] = `
 <div
   className="repos"
   style={Object {}}
@@ -60,6 +60,24 @@ Cleanup components",
         },
       ]
     }
+    name="PersonalGatsbyWebsite"
+    url="https://github.com/jangerhard/PersonalGatsbyWebsite"
+  />
+</div>
+`;
+
+exports[`renders repositories with no commits  1`] = `
+<div
+  className="repos"
+  style={Object {}}
+>
+  <RepositoryComponent
+    commits={Array []}
+    name="react-github-showcase"
+    url="https://github.com/jangerhard/react-github-showcase"
+  />
+  <RepositoryComponent
+    commits={Array []}
     name="PersonalGatsbyWebsite"
     url="https://github.com/jangerhard/PersonalGatsbyWebsite"
   />
