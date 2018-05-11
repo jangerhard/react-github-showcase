@@ -1,6 +1,6 @@
 {
   "name": "react-github-showcase",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Use GraphQL to showcase the latest worked-on projects of a given user.",
   "homepage": "https://github.com/jangerhard/react-github-showcase#readme",
   "bugs": {
