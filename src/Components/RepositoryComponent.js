@@ -5,7 +5,7 @@ import CommitComponent from "./CommitComponent";
 const RepositoryComponent = ({ name, commits, url }) => (
     <div>
         <a href={url}> {name} </a>
-        {commits.map(function (commit) {
+        {commits === [] ? <NoCommitMessage/> : commits.map(function (commit) {
             return <CommitComponent
                 key={commit.abbreviatedOid}
                 abbreviatedOid={commit.abbreviatedOid}
@@ -20,5 +20,11 @@ RepositoryComponent.propTypes = {
     commits: PropTypes.array.isRequired,
     url: PropTypes.string.isRequired
 };
+
+const NoCommitMessage = () => (
+    <div>
+        No commits yet.
+    </div>
+);
 
 export default RepositoryComponent;

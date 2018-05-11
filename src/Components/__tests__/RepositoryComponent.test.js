@@ -24,3 +24,16 @@ test('renders repository correctly', () => {
     const tree = renderer.getRenderOutput();
     expect(tree).toMatchSnapshot();
 });
+
+test('renders repository with no commits correctly', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(
+        <RepositoryComponent
+            commits={[]}
+            name={name}
+            url={url}
+        />
+    );
+    const tree = renderer.getRenderOutput();
+    expect(tree).toMatchSnapshot();
+});

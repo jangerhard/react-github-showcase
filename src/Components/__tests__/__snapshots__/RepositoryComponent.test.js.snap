@@ -16,3 +16,18 @@ exports[`renders repository correctly 1`] = `
   />
 </div>
 `;
+
+exports[`renders repository with no commits correctly 1`] = `
+<div>
+  <a
+    href="www.test.com"
+  >
+     
+    Test Testington
+     
+  </a>
+  <div>
+    No commits yet.
+  </div>
+</div>
+`;
