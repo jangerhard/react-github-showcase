@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders repository correctly 1`] = `
+<div>
+  <a
+    href="www.test.com"
+  >
+     
+    Test Testington
+     
+  </a>
+  <CommitComponent
+    abbreviatedOid="AAAAAA"
+    committedDate="2018-05-04T19:59:54Z"
+    message="This is a commit message"
+  />
+</div>
+`;
