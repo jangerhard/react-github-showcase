@@ -27,13 +27,13 @@ test('renders repository correctly', () => {
 });
 
 test('renders repository with no commits correctly', () => {
-    const renderer = renderer.create(
+    const component = renderer.create(
         <RepositoryComponent
             commits={[]}
             name={name}
             url={url}
         />
     );
-    const tree = renderer.getRenderOutput();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
