@@ -1,18 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders commit correctly 1`] = `
-<div
-  style={
-    Object {
-      "paddingLeft": "1em",
-    }
-  }
->
-  AAAAAA
-  : 
-  This is a commit message
-   (
-  3 days ago
-  )
+<div>
+  <span>
+    AAAAAA: 
+     
+  </span>
+  <span>
+    This is a commit message
+     
+  </span>
+  <span>
+    (
+    3 days ago
+    )
+  </span>
+</div>
+`;
+
+exports[`shortens long commit messages correctly 1`] = `
+<div>
+  <span>
+    AAAAAA: 
+     
+  </span>
+  <span>
+    This is a very long commit message, w...
+     
+  </span>
+  <span>
+    (
+    3 days ago
+    )
+  </span>
 </div>
 `;

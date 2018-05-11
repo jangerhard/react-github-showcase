@@ -6,10 +6,18 @@ const CommitComponent = ({committedDate, abbreviatedOid, message}) => {
 
     const date = moment(committedDate).fromNow();
 
+    function shortenMessage(message) {
+    message.length > 40 ? message = message.substring(0,37) + "..." : message
+    return message
+    };
+
     return (
-        <div style={{paddingLeft: "1em"}}>
-            {abbreviatedOid}: {message} ({date})
-        </div>
+      <div>
+      <span>{abbreviatedOid + ": "} </span>
+      <span>{shortenMessage(message)} </span>
+      <span>({date})</span>
+      </div>
+
     )
 };
 
@@ -20,4 +28,3 @@ CommitComponent.propTypes = {
 };
 
 export default CommitComponent;
-
