@@ -7,7 +7,7 @@ A small react component showcasing the latest contributions to your Github profi
 
 Uses headers to keep style consistent with your theme.
 
-Still under development, but usable! Can as of May 1st, 2018 be seen in action at [janschoepp-dev](https://janschoepp-dev.netlify.com/projects/).
+Still under development, but usable! Can as of May 1st, 2018 be seen in action at [React Github Showcase Demos](https://github-showcase-demos.netlify.com).
 
 ### Example with a [wrapper-div](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.js) providing [styling](https://github.com/jangerhard/PersonalGatsbyWebsite/blob/master/src/components/Common/CardPage.module.css) - See [more](https://github-showcase-demos.netlify.com)
 ![Image of component wrapped in styled div](https://raw.githubusercontent.com/jangerhard/react-github-showcase/master/react-github-showcase.PNG)
