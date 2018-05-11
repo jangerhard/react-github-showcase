@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/jangerhard/react-github-showcase.svg?style=svg)](https://circleci.com/gh/jangerhard/react-github-showcase)
+[![npm version](https://badge.fury.io/js/react-github-showcase.svg)](https://badge.fury.io/js/react-github-showcase)
 
 # React Github Showcase
 
@@ -46,13 +47,3 @@ numCommits: How many repositories should be displayed - Number (Default: 2)
 ### Styling 
 Wrap the component in a styled div to change the look and feel of the component, while still keeping it consistant with your own theme. See examples [here](https://github-showcase-demos.netlify.com)
 
-## Change-log
-
-### 0.0.11
-Proper formatting of dates
-
-### 0.0.6
-Add ability to specify number of repositories and commits to showcase
-
-### 0.0.5
-Add ability to hide basic profile info
