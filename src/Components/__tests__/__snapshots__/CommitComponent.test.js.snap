@@ -4,6 +4,9 @@ exports[`renders commit correctly 1`] = `
 <div
   style={
     Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
       "paddingLeft": "1em",
     }
   }
@@ -11,8 +14,15 @@ exports[`renders commit correctly 1`] = `
   AAAAAA
   : 
   This is a commit message
-   (
-  3 days ago
-  )
+  <div
+    style={
+      Object {
+        "opacity": ".5",
+        "paddingLeft": "0.5em",
+      }
+    }
+  >
+    3 days ago
+  </div>
 </div>
 `;
