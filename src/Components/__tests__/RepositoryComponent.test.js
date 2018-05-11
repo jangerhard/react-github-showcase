@@ -1,5 +1,6 @@
 import React from "react";
 import ShallowRenderer from 'react-test-renderer/shallow';
+import renderer from 'react-test-renderer';
 import RepositoryComponent from "../RepositoryComponent";
 
 const name = 'Test Testington';
@@ -26,8 +27,7 @@ test('renders repository correctly', () => {
 });
 
 test('renders repository with no commits correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(
+    const renderer = renderer.create(
         <RepositoryComponent
             commits={[]}
             name={name}
