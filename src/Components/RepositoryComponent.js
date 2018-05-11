@@ -22,8 +22,12 @@ RepositoryComponent.propTypes = {
     url: PropTypes.string.isRequired
 };
 
+const noCommitMessageStyle = {
+    paddingLeft: "1em"
+};
+
 const NoCommitMessage = () => (
-    <div>
+    <div style={noCommitMessageStyle}>
         No commits yet.
     </div>
 );

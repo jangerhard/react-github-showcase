@@ -58,7 +58,6 @@ class GithubShowcase extends React.Component {
                     }
 
                     <RepositoriesComponent repos={this.state.repos} />
-
                 </div>
             </div>
         );
