@@ -6,7 +6,7 @@ const variables = {
 };
 const fakeData = {
     "avatarUrl": "testUrl.com",
-    "name": "Test Testington",
+    "name": "Sir Test Testington",
     "repositories": {}
 };
 
@@ -14,20 +14,13 @@ const apiKeyError = 'Invalid API-Key';
 const variablesError = 'Invalid variables';
 
 export const getStatsFor = (apiKey, variables, callback) => {
-    return new Promise((resolve, reject) => {
 
-        // API_KEY === apiKey ? resolve(fakeData)
-        //     : reject({
-        //         error: 'Invalid API key'
-        //     })
+    API_KEY === apiKey && validVars(variables) ? callback(fakeData)
+        : Error({
+            error: 'Invalid API key'
+        })
+}
 
-        if (API_KEY !== apiKey)
-            reject(apiKeyError);
-        if (variables.name === username || variables.numRepositories === undefined || variables.numCommits === undefined)
-            reject(variablesError);
-
-        resolve(fakeData)
-    }).catch(() => {
-
-    });
+function validVars(vars) {
+    return !vars.username || !vars.numRepositories || !vars.numCommits
 }

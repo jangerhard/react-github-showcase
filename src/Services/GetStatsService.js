@@ -37,9 +37,15 @@ export const getStatsFor = (apiKey, variables, callback) => {
             'Content-Type': 'application/json',
             "Authorization": "bearer " + apiKey
         },
-        body: JSON.stringify({ query, variables }),
+        body: JSON.stringify({ query, variables })
     })
         .then(res => res.json())
-        .then(res => callback(res.data.user));
+        .then(res => {
+            if (res.message)
+                throw Error(res.message)
+
+            callback(res.data.user)
+        })
+        .catch(error => console.log(error))
 };
 
