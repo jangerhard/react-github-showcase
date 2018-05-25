@@ -1,5 +1,6 @@
 import React from "react";
 import ShallowRenderer from 'react-test-renderer/shallow';
+import renderer from 'react-test-renderer';
 import RepositoryComponent from "../RepositoryComponent";
 
 const name = 'Test Testington';
@@ -22,5 +23,17 @@ test('renders repository correctly', () => {
         />
     );
     const tree = renderer.getRenderOutput();
+    expect(tree).toMatchSnapshot();
+});
+
+test('renders repository with no commits correctly', () => {
+    const component = renderer.create(
+        <RepositoryComponent
+            commits={[]}
+            name={name}
+            url={url}
+        />
+    );
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
