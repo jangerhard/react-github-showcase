@@ -1,4 +1,4 @@
-import { getStatsFor } from "../GetStatsService"
+import {getStatsFor} from "../GetStatsService"
 
 jest.mock('../GetStatsService');
 
@@ -14,7 +14,7 @@ const invalidVariables = {
 
 const API_KEY = 'validKey';
 
-describe('#getStatsFor() using Promises', () => {
+describe('Using GraphQL - #getStatsFor()', () => {
     it('should load user data', () => {
         return getStatsFor(API_KEY, variables, (user) => {
             expect(user).toBeDefined()
@@ -23,21 +23,17 @@ describe('#getStatsFor() using Promises', () => {
         })
     })
     it('should handle an invalid APIKey and valid variables', () => {
-        return getStatsFor("invalidKey", variables)
-            .catch(error => {
-                expect(error).toBeDefined()
-                expect(error).toEqual('Invalid API-Key')
-            })
+        return getStatsFor("invalidKey", variables, (user) => {
+            expect(user).toBeUndefined()
+        })
     })
     it('should handle a valid APIKey and invalid variables', () => {
-        return getStatsFor(API_KEY, invalidVariables)
-            .catch(error => {
-                expect(error).toBeDefined()
-                expect(error).toEqual('Invalid variables')
-            })
+        return getStatsFor(API_KEY, invalidVariables, (user) => {
+            expect(user).toBeUndefined()
+        })
     })
-    it('should handle a 503', () => {
+    xit('should handle a 503', () => {
     })
-    it('should display a nicer error message', () => {
+    xit('should display a nicer error message', () => {
     });
 });
