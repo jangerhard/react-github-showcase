@@ -1,4 +1,4 @@
-import moment from 'moment';
+import ago from 's-ago';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -16,12 +16,12 @@ const dateStyle = {
 
 const CommitComponent = ({committedDate, abbreviatedOid, message}) => {
 
-    const date = moment(committedDate).fromNow();
+    const date = new Date(committedDate.replace("Z",""));
 
     return (
         <div style={commitStyle}>
             {abbreviatedOid}: {message}
-            <div style={dateStyle}>{date}</div>
+            <div style={dateStyle}>{ago(date)}</div>
         </div>
     )
 };
