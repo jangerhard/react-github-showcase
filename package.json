@@ -20,10 +20,10 @@
     "react": "^15.5.4"
   },
   "dependencies": {
-    "moment": "^2.22.1",
     "prop-types": "latest",
     "react": "^15.5.4",
     "react-test-renderer": "^15.6.2",
+    "s-ago": "^1.2.2",
     "webpack": "^2.6.1"
   },
   "scripts": {

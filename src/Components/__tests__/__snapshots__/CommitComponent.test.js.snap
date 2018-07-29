@@ -22,7 +22,9 @@ exports[`renders commit correctly 1`] = `
       }
     }
   >
-    3 days ago
+    Object {
+      "ago": [Function],
+    }
   </div>
 </div>
 `;

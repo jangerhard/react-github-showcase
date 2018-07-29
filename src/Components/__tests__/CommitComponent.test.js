@@ -6,8 +6,7 @@ const abbreviatedOid = 'AAAAAA';
 const message = 'This is a commit message';
 const committedDate = '2018-05-04T19:59:54Z';
 
-// Return a fixed timestamp when moment().format() is called
-jest.mock('moment', () => () => ({fromNow: () => '3 days ago'}));
+jest.mock('s-ago', () => () => ({ago: () => 'last week'}));
 
 it('renders commit correctly', () => {
     const renderer = new ShallowRenderer();
