@@ -51,7 +51,7 @@ class GithubShowcase extends React.Component {
         return (
 
             errorMessage ?
-                <ErrorComponent errorMessage={errorMessage}/> :
+                <ErrorComponent {...{errorMessage}}/> :
 
                 <MainComponent {...{
                     name,
