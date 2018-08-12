@@ -90,6 +90,17 @@ const reposWithNoCommits = [
     }
 ];
 
+test('renders repositories correctly when loading', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(
+        <RepositoriesComponent
+            repos={repos}
+            loading
+        />
+    );
+    const tree = renderer.getRenderOutput();
+    expect(tree).toMatchSnapshot();
+});
 test('renders repositories correctly', () => {
     const renderer = new ShallowRenderer();
     renderer.render(
