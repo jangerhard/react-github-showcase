@@ -30,16 +30,14 @@ export const query = `
 }
 `;
 
-export const getStatsFor = (apiKey, variables, callback) => {
-    fetch(API, {
+export const getStatsFor = (apiKey, variables) => {
+    return fetch(API, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             "Authorization": "bearer " + apiKey
         },
-        body: JSON.stringify({ query, variables }),
+        body: JSON.stringify({query, variables}),
     })
-        .then(res => res.json())
-        .then(res => callback(res.data.user));
 };
 

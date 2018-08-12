@@ -1,66 +1,65 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ProfileInfoComponent from "./Components/ProfileInfoComponent";
-import RepositoriesComponent from "./Components/RepositoriesComponent";
-import { getStatsFor } from "./Services/GetStatsService"
-
-const containerStyle = {
-    display: "flex",
-    flexDirection: "column"
-};
-
-const mainStyle = {
-    display: "flex",
-    flexDirection: "row"
-};
+import {getStatsFor} from "./Services/GetStatsService"
+import MainComponent from "./Components/MainComponent";
+import ErrorComponent from "./Components/ErrorComponent";
 
 class GithubShowcase extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            fullName: String,
-            avatarUrl: String,
-            repos: []
-        };
+    constructor() {
+        super();
+        this.state = {loading: true, userData: {}, errorMessage: null}
     }
 
     componentDidMount() {
+        const {username, api_key, numRepositories, numCommits} = this.props;
 
-        const variables = {
-            "username": this.props.username,
-            "numRepositories": this.props.numRepositories,
-            "numCommits": this.props.numCommits,
-        };
-
-        getStatsFor(this.props.api_key, variables, (user) => {
-            this.setState({
-                fullName: user.name,
-                avatarUrl: user.avatarUrl,
-                repos: user.repositories.edges
-            });
+        getStatsFor(api_key, {
+            username,
+            numRepositories,
+            numCommits
+        }).then(
+            res => {
+                if (res.ok) return res.json();
+                throw Error(res.statusText);
+            }
+        ).then(res => {
+                this.setState({
+                    loading: false,
+                    userData: res.data.user
+                })
+            }
+        ).catch(error => {
+            console.log(error);
+            return this.setState({
+                loading: false,
+                errorMessage: error.message
+            })
         })
     }
 
     render() {
 
+        const {loading, userData, errorMessage} = this.state;
+        const {avatarUrl, name, repositories} = userData;
+        const {showProfileInfo} = this.props;
+
+        console.log(this.state);
+
+        if (loading) return (<div>LOADING</div>);
+
         return (
-            <div style={containerStyle}>
-                <h3> Latest Github Activity </h3>
 
-                <div style={mainStyle}>
+            errorMessage ?
+                <ErrorComponent {...{errorMessage}}/> :
 
-                    {this.props.showProfileInfo &&
-                    <ProfileInfoComponent
-                        fullName={this.state.fullName}
-                        avatarUrl={this.state.avatarUrl} />
-                    }
-
-                    <RepositoriesComponent repos={this.state.repos} />
-                </div>
-            </div>
-        );
+                <MainComponent {...{
+                    name,
+                    avatarUrl,
+                    repos: repositories.edges,
+                    showProfileInfo
+                }}/>
+        )
     }
 }
 
