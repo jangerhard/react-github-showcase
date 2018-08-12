@@ -43,10 +43,9 @@ class GithubShowcase extends React.Component {
         const {loading, userData, errorMessage} = this.state;
         const {avatarUrl, name, repositories} = userData;
         const {showProfileInfo} = this.props;
+        const repos = repositories ? repositories.edges : [];
 
         console.log(this.state);
-
-        if (loading) return (<div>LOADING</div>);
 
         return (
 
@@ -56,8 +55,9 @@ class GithubShowcase extends React.Component {
                 <MainComponent {...{
                     name,
                     avatarUrl,
-                    repos: repositories.edges,
-                    showProfileInfo
+                    repos,
+                    showProfileInfo,
+                    loading
                 }}/>
         )
     }

@@ -1,27 +1,147 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders profile-info correctly 1`] = `
-<div
-  className="profileInfo"
-  style={
-    Object {
-      "display": "flex",
-      "flexDirection": "column",
-      "marginRight": "1.5em",
-      "textAlign": "center",
-      "width": "10em",
-    }
+<ReactPlaceholder
+  color="#CDCDCD"
+  customPlaceholder={
+    <div
+      className="profileInfo"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "marginRight": "1.5em",
+          "textAlign": "center",
+          "width": "10em",
+        }
+      }
+    >
+      <RoundShape
+        color="grey"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      />
+      <TextBlock
+        color="grey"
+        rows={1}
+        widths={
+          Array [
+            97,
+            100,
+            94,
+            90,
+            98,
+            95,
+            98,
+            40,
+          ]
+        }
+      />
+    </div>
   }
+  delay={0}
+  ready={true}
+  type="text"
 >
-  <img
-    className="pic"
-    src="www.avatarurl.com"
+  <div
+    className="profileInfo"
     style={
       Object {
-        "borderRadius": "50%",
+        "display": "flex",
+        "flexDirection": "column",
+        "marginRight": "1.5em",
+        "textAlign": "center",
+        "width": "10em",
       }
     }
-  />
-  Test Testington
-</div>
+  >
+    <img
+      className="pic"
+      src="www.avatarurl.com"
+      style={
+        Object {
+          "borderRadius": "50%",
+        }
+      }
+    />
+    Test Testington
+  </div>
+</ReactPlaceholder>
+`;
+
+exports[`renders profile-info correctly when loading 1`] = `
+<ReactPlaceholder
+  color="#CDCDCD"
+  customPlaceholder={
+    <div
+      className="profileInfo"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "marginRight": "1.5em",
+          "textAlign": "center",
+          "width": "10em",
+        }
+      }
+    >
+      <RoundShape
+        color="grey"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      />
+      <TextBlock
+        color="grey"
+        rows={1}
+        widths={
+          Array [
+            97,
+            100,
+            94,
+            90,
+            98,
+            95,
+            98,
+            40,
+          ]
+        }
+      />
+    </div>
+  }
+  delay={0}
+  ready={false}
+  type="text"
+>
+  <div
+    className="profileInfo"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "marginRight": "1.5em",
+        "textAlign": "center",
+        "width": "10em",
+      }
+    }
+  >
+    <img
+      className="pic"
+      src="www.avatarurl.com"
+      style={
+        Object {
+          "borderRadius": "50%",
+        }
+      }
+    />
+    Test Testington
+  </div>
+</ReactPlaceholder>
 `;
