@@ -27,7 +27,7 @@ describe('Using GraphQL - #getStatsFor()', () => {
             expect(user).toBeUndefined()
         })
     })
-    it('should handle a valid APIKey and invalid variables', () => {
+    xit('should handle a valid APIKey and invalid variables', () => {
         return getStatsFor(API_KEY, invalidVariables, (user) => {
             expect(user).toBeUndefined()
         })
