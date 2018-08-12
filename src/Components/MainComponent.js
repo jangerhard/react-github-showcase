@@ -12,7 +12,7 @@ const mainStyle = {
     flexDirection: "row"
 };
 
-const MainComponent = ({name, avatarUrl, repos, showProfileInfo}) =>
+const MainComponent = ({name, avatarUrl, repos, showProfileInfo, loading}) =>
     <div style={containerStyle}>
         <h3> Latest Github Activity test </h3>
 
@@ -21,10 +21,11 @@ const MainComponent = ({name, avatarUrl, repos, showProfileInfo}) =>
             {showProfileInfo &&
             <ProfileInfoComponent
                 fullName={name}
-                avatarUrl={avatarUrl}/>
+                avatarUrl={avatarUrl}
+                loading={loading}/>
             }
 
-            <RepositoriesComponent repos={repos}/>
+            <RepositoriesComponent loading={loading} repos={repos}/>
         </div>
     </div>;
 
